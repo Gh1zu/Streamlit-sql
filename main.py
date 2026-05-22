@@ -4,14 +4,14 @@ import sqlite3
 
 # define connection and cursor
 
-connection = sqlite3.connect("to_do.db") 
+connection = sqlite3.connect("user_db.db") 
 
 cursor = connection.cursor()
 
 #create to_do table
 
 cursor.execute(""" CREATE TABLE IF NOT EXISTS
-users(user_id TEXT PRIMARY KEY, user_name TEXT, user_email TEXT, user_phone_number TEXT)""")
+users(user_id INTEGER PRIMARY KEY, user_name TEXT, user_email TEXT, user_phone_number TEXT)""")
 connection.commit()
 
 st.title("Add user:")
